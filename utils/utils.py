@@ -196,3 +196,8 @@ def show_images(imgs, nrows, ncols, figsize=None):
             figs[i][j].axes.get_xaxis().set_visible(False)
             figs[i][j].axes.get_yaxis().set_visible(False)
     plt.show()
+
+
+def print_info(epoch, train_loss, train_acc, test_acc, train_data_len):
+    print("Epoch %d. Loss: %f, Train_acc: %f, Test_acc: %f" %
+          (epoch, train_loss/train_data_len, train_acc/train_data_len, test_acc))
