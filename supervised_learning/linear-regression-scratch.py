@@ -169,4 +169,4 @@ for e in range(epochs):
             print("Epoch %s, batch %s. Moving avg of loss: %s. Average loss: %f" % (e, niter, est_loss, total_loss/num_examples))
             #plot(losses, origin_data)
 
-print true_w, w, true_b, b
+print(true_w, w, true_b, b)

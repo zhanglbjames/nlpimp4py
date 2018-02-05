@@ -26,9 +26,9 @@ def dropout(X, drop_probability):
 # test dropout
 A = nd.arange(20).reshape((5,4))
 
-print dropout(A, 0.0)
-print dropout(A, 0.5)
-print dropout(A, 1.0)
+print(dropout(A, 0.0))
+print(dropout(A, 0.5))
+print(dropout(A, 1.0))
 
 import sys
 sys.path.append('..')
@@ -80,19 +80,19 @@ def net(X):
     hidden1 = nd.relu(nd.dot(X, W1) + b1)
     # 在第一层之后添加dropout层
     if autograd.is_training():
-        print "#",
+        print("#")
         hidden1 = dropout(hidden1, drop_prob1)
     else:
-        print "+",
+        print("+")
 
     # 第二层全连接
     hidden2 = nd.relu(nd.dot(hidden1, W2) + b2)
     if autograd.is_training():
         # 在第二层之后添加dropout层
-        print "/",
+        print("/")
         hidden2 = dropout(hidden2, drop_prob2)
     else:
-        print "-",
+        print("-")
     return nd.dot(hidden2, W3) + b3
 
 
@@ -109,7 +109,7 @@ learning_rate = 0.5
 for epoch in range(5):
     train_loss = 0.0
     train_acc = 0.0
-    print "\ntrain"
+    print("\ntrain")
     for data, label in train_data:
         with autograd.record():
             output = net(data)
@@ -120,7 +120,7 @@ for epoch in range(5):
         train_loss += nd.mean(loss).asscalar()
         train_acc += utils.accuracy(output, label)
 
-    print "\ntest"
+    print("\ntest")
     test_acc = utils.evaluate_accuracy(test_data, net)
 
     # 打印

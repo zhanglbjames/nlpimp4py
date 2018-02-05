@@ -69,6 +69,6 @@ for e in range(epochs):
 # 验证
 dense = net[0]
 # 打印权重
-print true_w, dense.weight.data()
+print(true_w, dense.weight.data())
 # 打印位移
-print true_b, dense.bias.data()
+print(true_b, dense.bias.data())

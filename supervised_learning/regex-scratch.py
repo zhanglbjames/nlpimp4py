@@ -101,7 +101,7 @@ def train(lambd):
 
 
 # 指定超参数
-print train(0)
+print(train(0))
 
-print train(2)
+print(train(2))
 
